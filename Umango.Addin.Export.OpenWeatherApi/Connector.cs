@@ -64,7 +64,7 @@ namespace Umango.Addin.Export.OpenWeatherApi
         {
             get
             {
-                return "Open Weather API";
+                return "Weather Check";
             }
         }
 

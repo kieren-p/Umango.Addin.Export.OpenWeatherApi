@@ -67,8 +67,11 @@
     <Compile Include="SettingsManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConnectorHTML.html" />
-    <Content Include="Javascript.js" />
+    <EmbeddedResource Include="ConnectorHTML.html" />
+    <EmbeddedResource Include="Javascript.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\weather.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
