@@ -14,7 +14,7 @@ namespace Umango.Addin.Export.OpenWeatherApi
     public class Connector : SDK.ExportConnector.Interfaces.IConnector
     {
         /// <summary>
-        /// We need to tell Umango what class type will be holding the unique settings
+        /// We need to tell Umango what class type will be holding the unique settings. You can name this whatever you like eg. GoogleDriveConnectorSettings or SettingsObject etc.
         /// </summary>
         public Type ConnectorSettingsObjectType
         {

@@ -8,11 +8,12 @@ namespace Umango.Addin.Export.OpenWeatherApi
     public class SettingsManager : ISettingsResources
     {
         private static HttpClient httpClient = new HttpClient();
-        private string API_KEY = "78756486a1e5e302c510165a051fa3dc";
+        private string API_KEY = "78756486a1e5e302c510165a051fa3dc"; 
         public string Javascript
         {
             get
             {
+                // The name of the Javascript file within the project dir
                 return GetFileContent("Javascript.js");
             }
 
@@ -22,6 +23,7 @@ namespace Umango.Addin.Export.OpenWeatherApi
         {
             get
             {
+                // The name of the HTML file within the project dir
                 return GetFileContent("ConnectorHTML.html");
             }
 
@@ -29,7 +31,7 @@ namespace Umango.Addin.Export.OpenWeatherApi
 
         public string MethodCaller(string ConnectionMethod, List<KeyValuePair<string, string>> Params)
         {
-
+            // This listens for requests sent to /dashboard/json/connector/query/{this GUID}/{ConnectionMethod}
             if (ConnectionMethod.ToLower() == "get_weather")
             {
                 return GetWeather(Params);
@@ -45,6 +47,7 @@ namespace Umango.Addin.Export.OpenWeatherApi
             string MethodResult = "";
             string citySelection = "";
 
+            // Capture the "city" param that was sent within the url
             foreach (KeyValuePair<string, string> pair in Params)
             {
                 if (pair.Key.ToString().ToUpper() == "CITY")
@@ -55,6 +58,7 @@ namespace Umango.Addin.Export.OpenWeatherApi
 
             if (string.IsNullOrEmpty(citySelection))
             {
+                // JSON format to send back to the frontend
                 return "{\"succeeded\": false, \"message\": \"You forgot to enter a city, silly!\"}";
             }
 
@@ -99,6 +103,5 @@ namespace Umango.Addin.Export.OpenWeatherApi
 
             return FileContent;
         }
-
     }
 }

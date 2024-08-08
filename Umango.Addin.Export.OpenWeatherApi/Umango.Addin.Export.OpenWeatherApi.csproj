@@ -73,5 +73,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\weather.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\postbuild.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -Command "Start-Process '$(ProjectDir)Scripts\postbuild.lnk' -Verb runAs"
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

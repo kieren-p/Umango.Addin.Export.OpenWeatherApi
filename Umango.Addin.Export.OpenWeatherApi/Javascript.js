@@ -10,6 +10,7 @@
         var citySelection = $('#city_input').val();
 
         $.get("/dashboard/json/connector/query/e6808a54-cfba-4a42-aec4-d4fe405955b4/get_weather?city=" + citySelection, function (data) {
+            // Take a peek at what the data looks like
             console.log(data);
 
             if (data.succeeded == false) {
@@ -21,19 +22,18 @@
     }
 
     $('#btn_city_input').on('click', GetWeather);
-
 }
 
 function ValidateSettings() {
 
     return true;
-
 }
 
 function UpdateSettings(Settings) {
 
+    // Save our values in the SettingsClass.cs and log them
     Settings.CitySelection = $('#city_input').val();
 
+    console.log(Settings);
     return Settings;
-
 }

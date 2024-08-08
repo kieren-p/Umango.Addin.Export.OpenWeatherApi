@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Umango.Addin.Export.OpenWeatherApi
 {
+    // Here is the SettingsClass we defined in Connector.cs
+    // All the values client side are saved and serialized in here for use within the connector
     [Serializable()]
     [XmlInclude(typeof(SettingsClass))]
     [DataContract]
