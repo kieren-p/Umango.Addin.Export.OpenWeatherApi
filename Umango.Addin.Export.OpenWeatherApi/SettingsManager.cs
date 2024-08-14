@@ -59,7 +59,7 @@ namespace Umango.Addin.Export.OpenWeatherApi
             if (string.IsNullOrEmpty(citySelection))
             {
                 // JSON format to send back to the frontend
-                return "{\"succeeded\": false, \"message\": \"You forgot to enter a city, silly!\"}";
+                return "{\"succeeded\": false, \"message\": \"You forgot to enter a city!\"}";
             }
 
             string apiUrl = $"http://api.openweathermap.org/data/2.5/weather?q={citySelection}&appid={API_KEY}";
